@@ -1,10 +1,10 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:ecommerce/models/category_model.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce/models/models.dart';
 import 'package:ecommerce/widgets/section_title.dart';
 import 'package:ecommerce/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -41,7 +41,14 @@ class HomeScreen extends StatelessWidget {
                     ))
                 .toList(),
           ),
-          const SectionTitle(title: 'SuperPippo!!!'),
+          const SectionTitle(title: 'RECOMMENDED'),
+          // Product Card
+          //ProductCard(
+          //  product: Product.products[3],
+          //),
+          ProductCarousel(
+            products: Product.products,
+          ),
         ],
       ),
     );

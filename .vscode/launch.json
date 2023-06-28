@@ -7,19 +7,22 @@
         {
             "name": "ecommerce",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": ["--device-user=0"]
         },
         {
             "name": "ecommerce (profile mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
+            "args": ["--device-user=0"]
         },
         {
             "name": "ecommerce (release mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "release",
+            "args": ["--device-user=0"]
         }
     ]
 }

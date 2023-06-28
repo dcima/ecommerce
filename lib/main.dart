@@ -1,10 +1,16 @@
 import 'package:ecommerce/config/app_router.dart';
 import 'package:ecommerce/config/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'screens/home/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Than we setup preferred orientations,
+  // and only after it finished we run our app
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown])
+      .then((value) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
