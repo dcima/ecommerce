@@ -9,7 +9,7 @@ void main() {
 
   // Than we setup preferred orientations,
   // and only after it finished we run our app
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown])
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((value) => runApp(const MyApp()));
 }
 

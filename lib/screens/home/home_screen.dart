@@ -19,6 +19,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int n_recommended = Product.products
+        .where((product) => product.isRecommended)
+        .toList()
+        .length;
+    int n_popular =
+        Product.products.where((product) => product.isPopular).toList().length;
+
     return Scaffold(
       appBar: const CustomAppBar('Zero To Unicorn'),
       bottomNavigationBar: const CustomNavBar(),
@@ -41,13 +48,16 @@ class HomeScreen extends StatelessWidget {
                     ))
                 .toList(),
           ),
-          const SectionTitle(title: 'RECOMMENDED'),
-          // Product Card
-          //ProductCard(
-          //  product: Product.products[3],
-          //),
+          SectionTitle(title: 'RECOMMENDED: $n_recommended'),
           ProductCarousel(
-            products: Product.products,
+            products: Product.products
+                .where((product) => product.isRecommended)
+                .toList(),
+          ),
+          SectionTitle(title: 'MOST POPULAR : $n_popular'),
+          ProductCarousel(
+            products:
+                Product.products.where((product) => product.isPopular).toList(),
           ),
         ],
       ),
