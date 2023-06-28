@@ -13,6 +13,8 @@ class AppRouter {
         return CartScreen.route();
       case CatalogScreen.routeName:
         return CatalogScreen.route();
+      case DeviceInfo.routeName:
+        return DeviceInfo.route();
       case ProductScreen.routeName:
         return ProductScreen.route();
       case UserScreen.routeName:
